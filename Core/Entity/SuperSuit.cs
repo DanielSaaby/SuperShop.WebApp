@@ -4,7 +4,7 @@ namespace Entity
 {
     public class SuperSuit
     {
-        public int Id { get; }
+        public int Id { get; set; }
         
         public String Name { get; set; }
         

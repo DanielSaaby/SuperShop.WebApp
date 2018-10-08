@@ -14,6 +14,7 @@ namespace Infrastructure.SuperShop
 
             var superSuit1 = ctx.superSuits.Add(new SuperSuit()
             {
+                
                 Name = "Captain America Suit",
                 Type = "Captain America",
                 Price = 999.99,
