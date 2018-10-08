@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Infrastructure.SuperShop
 {
-    class DBInitializer
+    public class DBInitializer
     {
         public static void SeedDB(SuperSuitAppContext ctx)
         {
@@ -19,6 +19,8 @@ namespace Infrastructure.SuperShop
                 Price = 999.99,
                 Description = "Blue, White, Red"
             });
+
+            ctx.SaveChanges();
              
         }
 

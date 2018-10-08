@@ -9,7 +9,7 @@ namespace Core.SuperShop.Domain_Service
         
         SuperSuit CreateSuperSuit(SuperSuit superSuit);
 
-        List<SuperSuit> ReadAll();
+        IEnumerable<SuperSuit> ReadAll();
 
         SuperSuit UpdateSuperSuit(int id);
 

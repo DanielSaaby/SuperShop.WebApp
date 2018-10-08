@@ -1,15 +1,25 @@
 using System.Collections.Generic;
 using Core.SuperShop.Domain_Service;
 using Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.SuperShop
 
 {
     public class SuperSuitRepository : ISuperSuitRepository
     {
+        readonly SuperSuitAppContext _ctx;
+
+        public SuperSuitRepository(SuperSuitAppContext ctx)
+        {
+            _ctx = ctx;
+        }
+
         public SuperSuit CreateSuperSuit(SuperSuit superSuit)
         {
-            throw new System.NotImplementedException();
+            _ctx.Attach(superSuit).State = EntityState.Added;
+            _ctx.SaveChanges();
+            return superSuit;
         }
 
         public SuperSuit DeleteSuperSuit(int id)
@@ -22,9 +32,9 @@ namespace Infrastructure.SuperShop
             throw new System.NotImplementedException();
         }
 
-        public List<SuperSuit> ReadAll()
+        public IEnumerable<SuperSuit> ReadAll()
         {
-            throw new System.NotImplementedException();
+            return _ctx.superSuits;
         }
 
         public SuperSuit UpdateSuperSuit(int id)

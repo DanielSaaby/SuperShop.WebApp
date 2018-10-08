@@ -32,6 +32,8 @@ namespace SuperShop.WebApp
             
 
             services.AddDbContext<SuperSuitAppContext>(opt => opt.UseSqlite("Data Source = SuperShop.DB"));
+
+
             services.AddScoped<ISuperSuitRepository, SuperSuitRepository>();
             services.AddScoped<ISuperSuitService, SuperSuitService>();
             
@@ -57,7 +59,7 @@ namespace SuperShop.WebApp
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

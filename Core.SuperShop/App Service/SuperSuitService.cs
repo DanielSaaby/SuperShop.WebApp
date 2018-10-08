@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Core.SuperShop.Domain_Service;
 using Entity;
 
@@ -6,19 +7,33 @@ namespace Core.SuperShop
 {
     public class SuperSuitService : ISuperSuitService
     {
+        readonly ISuperSuitRepository _superSuitRepository;
+
+        public SuperSuitService(ISuperSuitRepository superSuitRepository)
+        {
+            _superSuitRepository = superSuitRepository;
+        }
+
         public SuperSuit NewSuperSuit(string name, string type, double price, string description)
         {
-            throw new System.NotImplementedException();
+            var superSuit = new SuperSuit()
+            {
+                Name = name,
+                Type = type,
+                Price = price,
+                Description = description
+            };
+            return superSuit;
         }
 
         public SuperSuit CreateSuperSuit(SuperSuit superSuit)
         {
-            throw new System.NotImplementedException();
+            return _superSuitRepository.CreateSuperSuit(superSuit);
         }
 
         public List<SuperSuit> ReadAll()
         {
-            throw new System.NotImplementedException();
+            return _superSuitRepository.ReadAll().ToList();
         }
 
         public SuperSuit UpdateSuperSuit(int id)
@@ -28,7 +43,7 @@ namespace Core.SuperShop
 
         public SuperSuit DeleteSuperSuit(int id)
         {
-            throw new System.NotImplementedException();
+            return _superSuitRepository.DeleteSuperSuit(id);
         }
     }
 }
