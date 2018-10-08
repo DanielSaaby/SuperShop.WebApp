@@ -499,3 +499,4 @@ ASALocalRun/
 # End of https://www.gitignore.io/api/csharp,visualstudio
 Core.SuperShop/Core.SuperShop.csproj
 Core/Entity/Entity.csproj
+*.DB
