@@ -9,7 +9,7 @@ namespace Infrastructure.SuperShop
     {
         public static void SeedDB(SuperSuitAppContext ctx)
         {
-            ctx.Database.EnsureDeleted();
+            ctx.Database.EnsureDeleted(); 
             ctx.Database.EnsureCreated();
 
             var superSuit1 = ctx.superSuits.Add(new SuperSuit()
