@@ -106,7 +106,7 @@ namespace Infrastructure.SuperShop
             {
 
                 Name = "Catwoman Suit",
-                Type = "Batman,
+                Type = "Batman",
                 Price = 999.99,
                 Description = "Blue, White, Red"
             });
